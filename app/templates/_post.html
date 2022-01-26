@@ -1,0 +1,25 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('user', username=post.author.username) }}">
+                <img src="{{ post.author.avatar(70) }}" />
+            </a>
+        </td>
+        <td>
+            Creator:
+            <a href="{{ url_for('user', username=post.author.username) }}">
+                 {{ post.author.username }}
+            </a><br>
+            Date of creation: {{ moment(post.timestamp).format('LLL') }}
+            <br>
+            Title:{{ post.post_title }}<br>
+            Post:<br>
+            {{ post.body }}<br>
+
+            {% if user == current_user %}
+            <a href="{{ url_for('edit_post', id=post.id) }}" class="btn btn-outline-secondary btn sm">Edit the post.</a>
+            <a href="{{ url_for('delete_post', id=post.id) }}" class="btn btn-outline-danger btn sm">Delete the post.</a>
+            {% endif %}
+        </td>
+    </tr>
+</table>
