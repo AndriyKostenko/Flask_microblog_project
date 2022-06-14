@@ -1,6 +1,7 @@
 # microblog
 Hello, this is my microblog project. 
-I was practicing while studying at the  Beetroot Academy.
+
+Stack:
 -Flask
 -Flask-SQLAlchemy
 -Jinja2
