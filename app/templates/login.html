@@ -18,7 +18,7 @@
         </p>
         <p>
             {% for error in form.submit.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+            <span style="color: red;">Password or email is incorrect.</span>
             {% endfor %}
         </p>
         <p>{{ form.submit() }}</p>
