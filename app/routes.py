@@ -190,7 +190,9 @@ def delete_post(id):
     return render_template('delete_post.html', title='Delete post', post=post, form=form)
 
 
-
+@app.before_first_request
+def create_tables():
+    db.create_all()
 
 
 
